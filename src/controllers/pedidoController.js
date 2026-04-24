@@ -1,7 +1,7 @@
 const Pedido = require('../models/Pedido');
 const Produto = require('../models/Produto');
 
-// criar pedido com regra de estoque
+
 exports.create = async (req, res) => {
   const { produto_id, quantidade } = req.body;
 
@@ -15,7 +15,7 @@ exports.create = async (req, res) => {
     return res.json({ erro: 'Estoque insuficiente' });
   }
 
-  // diminui estoque
+  
   produto.estoque -= quantidade;
   await produto.save();
 
@@ -23,7 +23,7 @@ exports.create = async (req, res) => {
   res.json(pedido);
 };
 
-// listar pedidos
+
 exports.getAll = async (req, res) => {
   const pedidos = await Pedido.findAll();
   res.json(pedidos);
