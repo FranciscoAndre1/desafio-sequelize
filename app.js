@@ -3,7 +3,7 @@ const sequelize = require('./src/config/database');
 require('dotenv').config();
 require('./src/models');
 
-const app = express(); // 👈 TEM QUE VIR ANTES
+const app = express(); //
 
 app.use(express.json());
 
